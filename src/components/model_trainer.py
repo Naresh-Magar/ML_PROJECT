@@ -45,7 +45,7 @@ class ModelTrainer:
                 "Decision Tree": DecisionTreeRegressor(),
                 "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
-                "K-Neighbours Regressor": KNeighborsRegressor(),
+                "K-Neighbors Regressor": KNeighborsRegressor(),
                 "XGBRegressor": XGBRegressor(),
                 "Ada Boost Regressor": AdaBoostRegressor()
             }
@@ -124,7 +124,7 @@ class ModelTrainer:
             #save the model
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path(),
-                obj=best_model_name
+                obj=best_model
             )
             predicted_result=best_model.predict(X_test)
             r2_square_value=r2_score(y_test,predicted_result)
